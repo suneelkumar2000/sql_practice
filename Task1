@@ -1,0 +1,271 @@
+create database task;
+use task;
+CREATE TABLE web_events (
+	id integer primary key,
+	account_id integer ,
+	occurred_at timestamp,
+	channel varchar(100),
+    FOREIGN KEY (account_id) REFERENCES accounts(id)
+);
+INSERT INTO web_events VALUES (1,1001,'2015-10-06 17:13:58','direct');
+INSERT INTO web_events VALUES (2,1001,'2015-11-05 03:08:26','direct');
+INSERT INTO web_events VALUES (3,1001,'2015-12-04 03:57:24','direct');
+INSERT INTO web_events VALUES (4,1001,'2016-01-02 00:55:03','direct');
+INSERT INTO web_events VALUES (5,1001,'2016-02-01 19:02:33','direct');
+INSERT INTO web_events VALUES (6,1001,'2016-03-02 15:15:22','direct');
+INSERT INTO web_events VALUES (7,1001,'2016-04-01 10:58:55','direct');
+INSERT INTO web_events VALUES (8,1001,'2016-05-01 15:26:44','direct');
+INSERT INTO web_events VALUES (9,1001,'2016-05-31 20:53:47','direct');
+INSERT INTO web_events VALUES (10,1001,'2016-06-30 12:09:45','direct');
+INSERT INTO web_events VALUES (11,1001,'2016-07-30 03:06:26','direct');
+INSERT INTO web_events VALUES (12,1001,'2016-08-28 06:42:42','direct');
+INSERT INTO web_events VALUES (13,1001,'2016-09-26 23:14:59','direct');
+INSERT INTO web_events VALUES (14,1001,'2016-10-26 20:21:09','direct');
+INSERT INTO web_events VALUES (15,1001,'2016-11-25 22:52:29','direct');
+INSERT INTO web_events VALUES (16,1001,'2016-12-24 05:35:14','direct');
+INSERT INTO web_events VALUES (17,1011,'2016-12-21 10:29:36','direct');
+INSERT INTO web_events VALUES (18,1021,'2015-10-12 02:10:54','direct');
+INSERT INTO web_events VALUES (19,1021,'2015-11-11 07:10:19','direct');
+INSERT INTO web_events VALUES (20,1021,'2015-12-11 16:28:27','direct');
+INSERT INTO web_events VALUES (21,1021,'2016-01-10 09:04:12','direct');
+INSERT INTO web_events VALUES (22,1021,'2016-02-09 00:46:47','direct');
+INSERT INTO web_events VALUES (23,1021,'2016-03-10 00:11:03','direct');
+INSERT INTO web_events VALUES (24,1031,'2016-12-25 03:51:33','direct');
+INSERT INTO web_events VALUES (25,1041,'2016-10-14 23:40:23','direct');
+INSERT INTO web_events VALUES (26,1041,'2016-11-13 09:43:28','direct');
+
+select * from web_events;
+drop table web_events;
+
+CREATE TABLE sales_reps (
+	id integer primary key,
+	name varchar(100),
+	region_id integer,
+	FOREIGN KEY (region_id) REFERENCES region(id)
+);
+
+INSERT INTO sales_reps VALUES (321500,'Samuel Racine',1);
+INSERT INTO sales_reps VALUES (321510,'Eugena Esser',1);
+INSERT INTO sales_reps VALUES (321520,'Michel Averette',1);
+INSERT INTO sales_reps VALUES (321530,'Renetta Carew',1);
+INSERT INTO sales_reps VALUES (321540,'Cara Clarke',1);
+INSERT INTO sales_reps VALUES (321550,'Lavera Oles',1);
+INSERT INTO sales_reps VALUES (321560,'Elba Felder',1);
+INSERT INTO sales_reps VALUES (321570,'Shawanda Selke',1);
+INSERT INTO sales_reps VALUES (321580,'Sibyl Lauria',1);
+INSERT INTO sales_reps VALUES (321590,'Necole Victory',1);
+INSERT INTO sales_reps VALUES (321600,'Ernestine Pickron',1);
+INSERT INTO sales_reps VALUES (321610,'Ayesha Monica',1);
+INSERT INTO sales_reps VALUES (321620,'Retha Sears',1);
+INSERT INTO sales_reps VALUES (321630,'Julia Behrman',1);
+INSERT INTO sales_reps VALUES (321640,'Tia Amato',1);
+INSERT INTO sales_reps VALUES (321650,'Akilah Drinkard',1);
+INSERT INTO sales_reps VALUES (321660,'Silvana Virden',1);
+INSERT INTO sales_reps VALUES (321670,'Nakesha Renn',1);
+INSERT INTO sales_reps VALUES (321680,'Elna Condello',1);
+INSERT INTO sales_reps VALUES (321690,'Gianna Dossey',1);
+INSERT INTO sales_reps VALUES (321700,'Debroah Wardle',1);
+INSERT INTO sales_reps VALUES (321710,'Sherlene Wetherington',2);
+INSERT INTO sales_reps VALUES (321720,'Chau Rowles',2);
+INSERT INTO sales_reps VALUES (321730,'Carletta Kosinski',2);
+INSERT INTO sales_reps VALUES (321740,'Charles Bidwell',2);
+INSERT INTO sales_reps VALUES (321750,'Cliff Meints',2);
+INSERT INTO sales_reps VALUES (321760,'Delilah Krum',2);
+INSERT INTO sales_reps VALUES (321770,'Kathleen Lalonde',2);
+INSERT INTO sales_reps VALUES (321780,'Julie Starr',2);
+INSERT INTO sales_reps VALUES (321790,'Cordell Rieder',2);
+INSERT INTO sales_reps VALUES (321800,'Earlie Schleusner',3);
+INSERT INTO sales_reps VALUES (321810,'Moon Torian',3);
+INSERT INTO sales_reps VALUES (321820,'Dorotha Seawell',3);
+INSERT INTO sales_reps VALUES (321830,'Maren Musto',3);
+INSERT INTO sales_reps VALUES (321840,'Vernita Plump',3);
+INSERT INTO sales_reps VALUES (321850,'Calvin Ollison',3);
+INSERT INTO sales_reps VALUES (321860,'Saran Ram',3);
+INSERT INTO sales_reps VALUES (321870,'Derrick Boggess',3);
+INSERT INTO sales_reps VALUES (321880,'Babette Soukup',3);
+INSERT INTO sales_reps VALUES (321890,'Nelle Meaux',3);
+INSERT INTO sales_reps VALUES (321900,'Soraya Fulton',4);
+INSERT INTO sales_reps VALUES (321910,'Brandie Riva',4);
+INSERT INTO sales_reps VALUES (321920,'Marquetta Laycock',4);
+INSERT INTO sales_reps VALUES (321930,'Hilma Busick',4);
+INSERT INTO sales_reps VALUES (321940,'Arica Stoltzfus',4);
+INSERT INTO sales_reps VALUES (321950,'Elwood Shutt',4);
+INSERT INTO sales_reps VALUES (321960,'Maryanna Fiorentino',4);
+INSERT INTO sales_reps VALUES (321970,'Georgianna Chisholm',4);
+INSERT INTO sales_reps VALUES (321980,'Micha Woodford',4);
+INSERT INTO sales_reps VALUES (321990,'Dawna Agnew',4);
+
+select * from sales_reps;
+drop table sales_reps;
+
+CREATE TABLE region (
+	id integer primary key,
+	name varchar(100)
+);
+
+INSERT INTO region VALUES (1,'Northeast');
+INSERT INTO region VALUES (2,'Midwest');
+INSERT INTO region VALUES (3,'Southeast');
+INSERT INTO region VALUES (4,'West');
+
+select * from region;
+drop table region;
+
+CREATE TABLE orders (
+	id integer primary key,
+	account_id integer,
+	occurred_at timestamp,
+	standard_qty integer,
+	gloss_qty integer,
+	poster_qty integer,
+	total integer,
+	standard_amt_usd numeric(10,2),
+	gloss_amt_usd numeric(10,2),
+	poster_amt_usd numeric(10,2),
+	total_amt_usd numeric(10,2),
+    FOREIGN KEY (account_id) REFERENCES accounts(id)
+);
+
+INSERT INTO orders VALUES (1,1001,'2015-10-06 17:31:14',123,22,24,169,613.77,164.78,194.88,973.43);
+INSERT INTO orders VALUES (2,1001,'2015-11-05 03:34:33',190,41,57,288,948.1,307.09,462.84,1718.03);
+INSERT INTO orders VALUES (3,1001,'2015-12-04 04:21:55',85,47,0,132,424.15,352.03,0,776.18);
+INSERT INTO orders VALUES (4,1001,'2016-01-02 01:18:24',144,32,0,176,718.56,239.68,0,958.24);
+INSERT INTO orders VALUES (5,1001,'2016-02-01 19:27:27',108,29,28,165,538.92,217.21,227.36,983.49);
+INSERT INTO orders VALUES (6,1001,'2016-03-02 15:29:32',103,24,46,173,513.97,179.76,373.52,1067.25);
+INSERT INTO orders VALUES (7,1001,'2016-04-01 11:20:18',101,33,92,226,503.99,247.17,747.04,1498.2);
+INSERT INTO orders VALUES (8,1001,'2016-05-01 15:55:51',95,47,151,293,474.05,352.03,1226.12,2052.2);
+INSERT INTO orders VALUES (9,1001,'2016-05-31 21:22:48',91,16,22,129,454.09,119.84,178.64,752.57);
+INSERT INTO orders VALUES (10,1001,'2016-06-30 12:32:05',94,46,8,148,469.06,344.54,64.96,878.56);
+INSERT INTO orders VALUES (11,1001,'2016-07-30 03:26:30',101,36,0,137,503.99,269.64,0,773.63);
+INSERT INTO orders VALUES (12,1001,'2016-08-28 07:13:39',124,33,39,196,618.76,247.17,316.68,1182.61);
+INSERT INTO orders VALUES (13,1001,'2016-09-26 23:28:25',104,10,44,158,518.96,74.9,357.28,951.14);
+INSERT INTO orders VALUES (14,1001,'2016-10-26 20:31:30',97,143,54,294,484.03,1071.07,438.48,1993.58);
+INSERT INTO orders VALUES (15,1001,'2016-11-25 23:21:32',127,39,44,210,633.73,292.11,357.28,1283.12);
+INSERT INTO orders VALUES (16,1001,'2016-12-24 05:53:13',123,127,19,269,613.77,951.23,154.28,1719.28);
+INSERT INTO orders VALUES (17,1011,'2016-12-21 10:59:34',527,14,0,541,2629.73,104.86,0,2734.59);
+INSERT INTO orders VALUES (18,1021,'2015-10-12 02:21:56',516,23,0,539,2574.84,172.27,0,2747.11);
+INSERT INTO orders VALUES (19,1021,'2015-11-11 07:37:01',497,61,0,558,2480.03,456.89,0,2936.92);
+INSERT INTO orders VALUES (20,1021,'2015-12-11 16:53:18',483,0,21,504,2410.17,0,170.52,2580.69);
+INSERT INTO orders VALUES (21,1021,'2016-01-10 09:29:45',535,0,34,569,2669.65,0,276.08,2945.73);
+INSERT INTO orders VALUES (22,1021,'2016-02-09 00:50:46',502,4,9,515,2504.98,29.96,73.08,2608.02);
+INSERT INTO orders VALUES (23,1021,'2016-03-10 00:38:52',555,19,4,578,2769.45,142.31,32.48,2944.24);
+INSERT INTO orders VALUES (24,1031,'2016-12-25 03:54:27',1148,0,215,1363,5728.52,0,1745.8,7474.32);
+INSERT INTO orders VALUES (25,1041,'2016-10-14 23:54:21',298,28,69,395,1487.02,209.72,560.28,2257.02);
+INSERT INTO orders VALUES (26,1041,'2016-11-13 10:11:52',307,22,0,329,1531.93,164.78,0,1696.71);
+INSERT INTO orders VALUES (27,1041,'2016-12-12 07:50:01',157,34,21,212,783.43,254.66,170.52,1208.61);
+INSERT INTO orders VALUES (28,1051,'2016-08-02 20:13:27',505,84,0,589,2519.95,629.16,0,3149.11);
+INSERT INTO orders VALUES (29,1051,'2016-09-01 05:38:19',498,35,9,542,2485.02,262.15,73.08,2820.25);
+INSERT INTO orders VALUES (30,1051,'2016-10-01 00:48:28',486,0,1,487,2425.14,0,8.12,2433.26);
+INSERT INTO orders VALUES (31,1051,'2016-10-31 06:47:30',505,71,19,595,2519.95,531.79,154.28,3206.02);
+INSERT INTO orders VALUES (32,1051,'2016-11-30 07:31:16',490,18,0,508,2445.1,134.82,0,2579.92);
+INSERT INTO orders VALUES (33,1051,'2016-12-30 08:45:43',495,1,1,497,2470.05,7.49,8.12,2485.66);
+INSERT INTO orders VALUES (34,1061,'2016-10-19 16:04:11',290,52,23,365,1447.1,389.48,186.76,2023.34);
+INSERT INTO orders VALUES (35,1061,'2016-11-17 08:43:27',249,3,17,269,1242.51,22.47,138.04,1403.02);
+INSERT INTO orders VALUES (36,1061,'2016-12-16 21:32:36',290,22,18,330,1447.1,164.78,146.16,1758.04);
+INSERT INTO orders VALUES (37,1071,'2016-12-13 09:01:03',803,31,19,853,4006.97,232.19,154.28,4393.44);
+INSERT INTO orders VALUES (38,1081,'2015-02-12 22:57:54',283,61,23,367,1412.17,456.89,186.76,2055.82);
+INSERT INTO orders VALUES (39,1081,'2015-03-13 09:48:32',309,0,25,334,1541.91,0,203,1744.91);
+INSERT INTO orders VALUES (40,1081,'2015-04-12 04:38:22',292,30,11,333,1457.08,224.7,89.32,1771.1);
+INSERT INTO orders VALUES (41,1081,'2015-05-12 23:20:46',273,30,19,322,1362.27,224.7,154.28,1741.25);
+INSERT INTO orders VALUES (42,1081,'2015-06-11 13:43:57',291,36,62,389,1452.09,269.64,503.44,2225.17);
+INSERT INTO orders VALUES (43,1081,'2015-07-11 23:17:32',433,18,73,524,2160.67,134.82,592.76,2888.25);
+INSERT INTO orders VALUES (44,1081,'2015-08-09 18:29:20',297,24,9,330,1482.03,179.76,73.08,1734.87);
+INSERT INTO orders VALUES (45,1081,'2015-09-07 15:35:21',293,30,20,343,1462.07,224.7,162.4,1849.17);
+INSERT INTO orders VALUES (46,1081,'2015-11-06 04:19:20',321,38,16,375,1601.79,284.62,129.92,2016.33);
+INSERT INTO orders VALUES (47,1081,'2015-12-05 21:51:34',311,31,7,349,1551.89,232.19,56.84,1840.92);
+INSERT INTO orders VALUES (48,1081,'2016-01-03 23:21:47',314,20,208,542,1566.86,149.8,1688.96,3405.62);
+INSERT INTO orders VALUES (49,1081,'2016-02-01 20:00:37',298,26,25,349,1487.02,194.74,203,1884.76);
+INSERT INTO orders VALUES (50,1081,'2016-03-02 06:07:31',270,40,31,341,1347.3,299.6,251.72,1898.62);
+INSERT INTO orders VALUES (51,1081,'2016-04-30 07:46:13',501,26,15,542,2499.99,194.74,121.8,2816.53);
+
+select * from orders;
+drop table orders;
+
+CREATE TABLE accounts (
+	id integer primary key,
+	name varchar(100),
+	website varchar(100),
+	lat numeric(11,8),
+	long_acc numeric(11,8),
+	primary_poc varchar(100),
+	sales_rep_id integer,
+    FOREIGN KEY (sales_rep_id) REFERENCES sales_reps(id)
+);
+
+INSERT INTO accounts VALUES (1001,'Walmart','www.walmart.com',40.23849561,-75.10329704,'Tamara Tuma',321500);
+INSERT INTO accounts VALUES (1011,'Exxon Mobil','www.exxonmobil.com',41.1691563,-73.84937379,'Sung Shields',321510);
+INSERT INTO accounts VALUES (1021,'Apple','www.apple.com',42.29049481,-76.08400942,'Jodee Lupo',321520);
+INSERT INTO accounts VALUES (1031,'Berkshire Hathaway','www.berkshirehathaway.com',40.94902131,-75.76389759,'Serafina Banda',321530);
+INSERT INTO accounts VALUES (1041,'McKesson','www.mckesson.com',42.21709326,-75.28499823,'Angeles Crusoe',321540);
+INSERT INTO accounts VALUES (1051,'UnitedHealth Group','www.unitedhealthgroup.com',40.08792542,-75.57569396,'Savanna Gayman',321550);
+INSERT INTO accounts VALUES (1061,'CVS Health','www.cvshealth.com',41.46779585,-73.76763638,'Anabel Haskell',321560);
+INSERT INTO accounts VALUES (1071,'General Motors','www.gm.com',40.80551762,-76.7101814,'Barrie Omeara',321570);
+INSERT INTO accounts VALUES (1081,'Ford Motor','www.ford.com',41.113942,-75.85422452,'Kym Hagerman',321580);
+INSERT INTO accounts VALUES (1091,'AT&T','www.att.com',42.4974627,-74.90271225,'Jamel Mosqueda',321590);
+INSERT INTO accounts VALUES (1101,'General Electric','www.ge.com',41.1697121,-77.29713174,'Parker Hoggan',321600);
+INSERT INTO accounts VALUES (1111,'AmerisourceBergen','www.amerisourcebergen.com',41.91146908,-74.4762077,'Tuan Trainer',321610);
+INSERT INTO accounts VALUES (1121,'Verizon','www.verizon.com',41.3414106,-75.77193559,'Chantell Drescher',321620);
+INSERT INTO accounts VALUES (1131,'Chevron','www.chevron.com',42.6119413,-76.36123105,'Paige Bartos',321630);
+INSERT INTO accounts VALUES (1141,'Costco','www.costco.com',42.26304566,-74.80916921,'Dominique Favela',321640);
+INSERT INTO accounts VALUES (1151,'Fannie Mae','www.fanniemae.com',41.40919044,-73.95770097,'Terrilyn Kesler',321650);
+INSERT INTO accounts VALUES (1161,'Kroger','www.thekrogerco.com',42.57610194,-76.35945488,'Nannie Brinkman',321660);
+INSERT INTO accounts VALUES (1171,'Amazon.com','www.amazon.com',42.03552936,-77.08453787,'Buffy Azure',321670);
+INSERT INTO accounts VALUES (1181,'Walgreens Boots Alliance','www.walgreensbootsalliance.com',41.76033082,-75.76168171,'Esta Engelhardt',321680);
+INSERT INTO accounts VALUES (1191,'HP','www.hp.com',41.01091302,-74.38047472,'Khadijah Riemann',321690);
+INSERT INTO accounts VALUES (1201,'Cardinal Health','www.cardinal.com',41.31906537,-77.52512192,'Deanne Hertlein',321700);
+INSERT INTO accounts VALUES (1211,'Express Scripts Holding','www.express-scripts.com',41.47633009,-76.07993254,'Jewell Likes',321500);
+INSERT INTO accounts VALUES (1221,'J.P. Morgan Chase','www.jpmorganchase.com',40.39050914,-74.35128299,'Florentino Madrigal',321510);
+INSERT INTO accounts VALUES (1231,'Boeing','www.boeing.com',40.23107071,-76.51519085,'Melva Lyall',321520);
+INSERT INTO accounts VALUES (1241,'Microsoft','www.microsoft.com',41.80083073,-74.01331115,'Dennise Hungate',321530);
+INSERT INTO accounts VALUES (1251,'Bank of America Corp.','www.bankofamerica.com',41.58226327,-74.03976515,'Janise Voth',321540);
+INSERT INTO accounts VALUES (1261,'Wells Fargo','www.wellsfargo.com',42.29559131,-76.35302092,'Lakenya Volker',321550);
+INSERT INTO accounts VALUES (1271,'Home Depot','www.homedepot.com',41.38089123,-75.49637851,'Alexandria Zielke',321560);
+INSERT INTO accounts VALUES (1281,'Citigroup','www.citigroup.com',40.85305429,-76.49044823,'Bea Sera',321570);
+INSERT INTO accounts VALUES (1291,'Phillips 66','www.phillips66.com',42.63789896,-76.16215145,'Maria Garibay',321580);
+INSERT INTO accounts VALUES (1301,'IBM','www.ibm.com',40.74381454,-76.80764423,'Denis Gros',321590);
+INSERT INTO accounts VALUES (1311,'Valero Energy','www.valero.com',41.73014984,-76.37600422,'Taylor Capone',321600);
+
+select * from accounts;
+drop table accounts;
+
+/*1.Find list of orders ids where either gloss_qty or poster_qty is greater than 4000.
+Only include the id field in the resulting table.*/
+select id from orders where gloss_qty >4000 or poster_qty>4000;
+
+/*2.Write a query that returns a list of orders where the standard_qty is zero and either the gloss_qty or poster_qty is over 1000.*/
+select id from orders where (standard_qty = 0 and(gloss_qty >1000 or poster_qty >1000));
+
+/*3.Find all the company names that start with a 'C' or 'W', and the primary contact contains 'ana' or 'Ana', but it doesn't contain 'eana'.*/
+select name from accounts where (name like'c%' or name like'w%')and(primary_poc like '%ana%' and primary_poc not like '%eana%');
+
+/*4. Write a query that returns all the orders where the standard_qty is over 1000, the poster_qty is 0, and the gloss_qty is 0*/
+select id from orders where (standard_qty>1000 and poster_qty=0 and gloss_qty=0);
+
+/*5.Using the accounts table, find all the companies whose names do not start with 'C' and end with 's'*/
+select name from accounts where (name not like 'c%' and name not like '%s');
+
+/*7.Figure out the answer to this important question by writing a query that displays the order date and gloss_qty data for all orders where gloss_qty is between 24 and 29. Then look at your output to see if the BETWEEN operator included the begin and end values or not.*/
+select occurred_at,gloss_qty from orders where (gloss_qty between 24 and 29);
+
+/*8.Use the web_events table to find all information regarding individuals who were contacted via the organic or adwords channels, and started their account at any point in 2016, sorted from newest to oldest.*/
+select * from web_events where ((channel like 'organic'or channel like 'adwords') and occurred_at >= '2016-01-01 00:00:00')group by id order by occurred_at desc;
+
+/*9.Write a query to return the 10 earliest orders in the orders table. Include the id, occurred_at, and total_amt_usd.*/
+select id,occurred_at,total_amt_usd from orders order by occurred_at LIMIT 10;
+
+/*10.Write a query to return the top 5 orders in terms of largest total_amt_usd.
+Include the id, account_id, and total_amt_usd
+*/
+select id,account_id,total_amt_usd from orders order by total_amt_usd desc LIMIT 5;
+
+/*11.Write a query to return the lowest 20 orders in terms of smallest total_amt_usd.
+Include the id, account_id, and total_amt_usd
+*/
+select id,account_id,total_amt_usd from orders order by total_amt_usd asc LIMIT 20;
+
+/*12.Write a query that displays the order ID, account ID, and total dollar amount for all the orders, sorted first by the account ID (in ascending order), and then by the total dollar amount  (in descending order).*/
+select id,account_id,total_amt_usd from orders  order by account_id asc,total_amt_usd desc;
+
+/*13.Now write a query that again displays order ID, account ID, and total dollar amount for each order, but this time sorted first by total dollar amount (in descending order), and then by account ID (in ascending order)
+*/
+select id,account_id,total_amt_usd from orders  order by total_amt_usd desc,account_id asc;
